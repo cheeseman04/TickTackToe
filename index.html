@@ -9,10 +9,16 @@
 <body>
     <script>
         const answer = ["Rock", "Paper", "Scissors"];
-        console.log (answer);
 
-        const random = Math.floor(Math.random()*answer.length);
-        console.log (answer[random]);
+        function getComputerChoice () {
+            const random = Math.floor(Math.random()*answer.length);
+            return answer[random];
+            console.log (answer[random]);
+        }
+
+        console.log (getComputerChoice())
+
+        
     </script>
 </body>
 </html>
