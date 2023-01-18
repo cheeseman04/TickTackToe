@@ -16,7 +16,20 @@
             console.log (answer[random]);
         }
 
-        console.log (getComputerChoice())
+        function playRound (playerSelection, computerSelection) {
+            if (playerSelection === "Rock" && computerSelection === "Paper") {
+                return ("Sorry, You Lose. Paper Beats Rock");
+            } else if (playerSelection === "Rock" && computerSelection === "Rock") {
+                return ("It's a Tie! Try Again");
+            } else if(playerSelection === "Rock" && computerSelection === "Scissors") {
+                return ("You Win! Rock Beats Scissors");
+                console.log (getComputerChoice())
+            }
+        }
+
+        const playerSelection = "Rock";
+        const computerSelection = getComputerChoice ();
+        console.log (playRound(playerSelection, computerSelection))
 
         
     </script>
