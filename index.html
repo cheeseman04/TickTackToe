@@ -13,7 +13,7 @@
         function getComputerChoice () {
             const random = Math.floor(Math.random()*answer.length);
             return answer[random];
-            console.log (answer[random]);
+
         }
 
         function playRound (playerSelection, computerSelection) {
@@ -23,13 +23,26 @@
                 return ("It's a Tie! Try Again");
             } else if(playerSelection === "Rock" && computerSelection === "Scissors") {
                 return ("You Win! Rock Beats Scissors");
-                console.log (getComputerChoice())
             }
         }
 
         const playerSelection = "Rock";
         const computerSelection = getComputerChoice ();
         console.log (playRound(playerSelection, computerSelection))
+
+        function game () {
+            let result = playRound (playerSelection, computerSelection)
+
+            if (result === "Sorry, You Lose. Paper Beats Rock") {
+                return ("Computer Wins");
+            } else if (result === "It's a Tie! Try Again") {
+                return ("Tie"); 
+            } else if (result === "You Win! Rock Beats Scissors") {
+                return ("Human Wins")
+            }
+        }
+
+        console.log (game ())
 
         
     </script>
