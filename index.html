@@ -12,7 +12,7 @@
         let humanScore = 0;
         let draws = 0;
 
-        const answer = ["Rock", "Paper", "Scissors"];
+        const answer = ["rock", "paper", "scissors"];
 
         function getComputerChoice () {
             const random = Math.floor(Math.random()*answer.length);
@@ -35,15 +35,14 @@
         }
 
         function game () {
-            let result = playRound (playerSelection, computerSelection)
-
-            if (result === "Sorry, You Lose. Paper Beats Rock") {
-                return ("Computer Wins");
-            } else if (result === "It's a Tie! Try Again") {
-                return ("Tie"); 
-            } else if (result === "You Win! Rock Beats Scissors") {
-                return ("Human Wins")
+            for (i=0; i<6; i++) {
+                let playerSelection = prompt ("please make your selection:").toLowerCase ();
+                let computerSelection = getComputerChoice ();
+                let result = playRound (playerSelection, computerSelection);
+                console.log (result)
             }
+
+      
         }
 
         console.log (game())
