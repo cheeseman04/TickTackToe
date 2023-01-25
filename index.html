@@ -39,10 +39,31 @@
                 let playerSelection = prompt ("please make your selection:").toLowerCase ();
                 let computerSelection = getComputerChoice ();
                 let result = playRound (playerSelection, computerSelection);
-                console.log (result)
+                console.log (result);
+                gameScore (result);
+                console.log ("Computer Score:" + computerScore)
+                console.log ("Human Score:" + humanScore)
             }
 
       
+        }
+
+        function gameScore (result) {
+            if (result === "humanWins") {
+                humanScore++;
+            } else if (result === "computerWins") {
+                computerScore++
+            } else if (result === "tie") {
+                draws++
+            }
+        }
+
+        function gameEnd (gameScore) {
+            if (computerScore === 3) {
+                return ("Game Over. Computer Wins")
+            } else if (humanScore === 3) {
+                return ("Game Over. Human Wins")
+            }
         }
 
         console.log (game())
