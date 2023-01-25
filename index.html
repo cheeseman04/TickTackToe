@@ -21,12 +21,16 @@
         }
 
         function playRound (playerSelection, computerSelection) {
-            if (playerSelection === "Rock" && computerSelection === "Paper") {
-                return ("Sorry, You Lose. Paper Beats Rock");
-            } else if (playerSelection === "Rock" && computerSelection === "Rock") {
-                return ("It's a Tie! Try Again");
-            } else if(playerSelection === "Rock" && computerSelection === "Scissors") {
-                return ("You Win! Rock Beats Scissors");
+            if (playerSelection === computerSelection) {
+                return ("tie");
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                return ("humanWins");
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                return ("humanWins");
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                return ("humanWins")
+            } else {
+                return ("computerWins")
             }
         }
 
