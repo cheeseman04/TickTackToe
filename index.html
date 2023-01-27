@@ -43,6 +43,10 @@
                 gameScore (result);
                 console.log ("Computer Score:" + computerScore)
                 console.log ("Human Score:" + humanScore)
+
+                if (humanScore === 3 || computerScore === 3) {
+                    break;
+                }
             }
 
       
@@ -51,18 +55,20 @@
         function gameScore (result) {
             if (result === "humanWins") {
                 humanScore++;
-            } else if (result === "computerWins") {
-                computerScore++
             } else if (result === "tie") {
                 draws++
+            } else {
+                computerScore++
             }
-        }
 
-        function gameEnd (gameScore) {
+            if (humanScore === 3) {
+                console.log ("Game Over. Human Wins"); 
+                alert ("Game Over. Human Wins!")  
+            } 
+
             if (computerScore === 3) {
-                return ("Game Over. Computer Wins")
-            } else if (humanScore === 3) {
-                return ("Game Over. Human Wins")
+                console.log ("Game Over. Computer Wins");
+                alert ("Game Over. Computer Wins.")
             }
         }
 
