@@ -35,23 +35,23 @@
             }
         }
         //loops a game of RPS, calls score function to display score after each round
-        function game () {
-            for (i=0; i<10; i++) {
-                let playerSelection = prompt ("please make your selection:").toLowerCase ();
-                let computerSelection = getComputerChoice ();
-                let result = playRound (playerSelection, computerSelection);
-                console.log (result);
-                gameScore (result);
-                console.log ("Computer Score:" + computerScore)
-                console.log ("Human Score:" + humanScore)
+        //function game () {
+            //for (i=0; i<10; i++) {
+                //let playerSelection = prompt ("please make your selection:").toLowerCase ();
+                //let computerSelection = getComputerChoice ();
+                //let result = playRound (playerSelection, computerSelection);
+                //console.log (result);
+                //gameScore (result);
+                //console.log ("Computer Score:" + computerScore)
+                //console.log ("Human Score:" + humanScore)
 
-                if (humanScore === 3 || computerScore === 3) {
-                    break;
-                }
-            }
+                //if (humanScore === 3 || computerScore === 3) {
+                    //break;
+                //}
+            //}
 
       
-        }
+        //}
         //determines score based on results of the game
         function gameScore (result) {
             if (result === "humanWins") {
