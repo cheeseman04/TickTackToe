@@ -9,9 +9,9 @@
 <body>
     <h1>Rock, Paper, Scissors: The Game</h1>
     <h3>Please Make Your Selection Below</h3>
-    <button>ROCK</button>
-    <button>PAPER</button>
-    <button>SCISSORS</button>
+    <button id="rock">ROCK</button>
+    <button id="paper">PAPER</button>
+    <button id="scissors">SCISSORS</button>
 
     <div class="score">Current Score:</div>
 
@@ -28,6 +28,16 @@
             return answer[random];
 
         }
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const playerSelection = button.id;
+                const computerSelection = getComputerChoice ();
+                console.log (playRound (playerSelection, computerSelection))
+            });
+        });
+
         //This function sets up who wins and loses between human and computer based on their choices
         function playRound (playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
@@ -42,24 +52,26 @@
                 return ("computerWins")
             }
         }
-        //loops a game of RPS, calls score function to display score after each round
-        //function game () {
-            //for (i=0; i<10; i++) {
-                //let playerSelection = prompt ("please make your selection:").toLowerCase ();
-                //let computerSelection = getComputerChoice ();
-                //let result = playRound (playerSelection, computerSelection);
-                //console.log (result);
-                //gameScore (result);
-                //console.log ("Computer Score:" + computerScore)
-                //console.log ("Human Score:" + humanScore)
 
-                //if (humanScore === 3 || computerScore === 3) {
-                    //break;
-                //}
-            //}
+        
+        //loops a game of RPS, calls score function to display score after each round
+        // function game () {
+        //     for (i=0; i<10; i++) {
+        //         let playerSelection = prompt ("please make your selection:").toLowerCase ();
+        //         let computerSelection = getComputerChoice ();
+        //         let result = playRound (playerSelection, computerSelection);
+        //         console.log (result);
+        //         gameScore (result);
+        //         console.log ("Computer Score:" + computerScore)
+        //         console.log ("Human Score:" + humanScore)
+
+        //         if (humanScore === 3 || computerScore === 3) {
+        //             break;
+        //         }
+        //     }
 
       
-        //}
+        // }
         //determines score based on results of the game
         function gameScore (result) {
             if (result === "humanWins") {
