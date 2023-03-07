@@ -13,7 +13,9 @@
     <button id="paper">PAPER</button>
     <button id="scissors">SCISSORS</button>
 
-    <div class="score">Current Score:</div>
+    <!--Try to create a container here, just like in the DOM methods where the page is currently open to.-->
+
+    <div id="container"></div>
 
     <script>
         let computerScore = 0;
@@ -34,9 +36,18 @@
             button.addEventListener('click', () => {
                 const playerSelection = button.id;
                 const computerSelection = getComputerChoice ();
-                console.log (playRound (playerSelection, computerSelection))
+
+                const container = document.querySelector('#container');
+                const content = document.createElement ('div');
+                content.classList.add('score');
+                content.textContent = 'The winner is: ' + playRound (playerSelection, computerSelection);
+                
+                container.appendChild(content);
+                
             });
         });
+
+        
 
         //This function sets up who wins and loses between human and computer based on their choices
         function playRound (playerSelection, computerSelection) {
