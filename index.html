@@ -31,18 +31,26 @@
 
         }
 
+        //does all of this need to go inside the loop?
+        
         const buttons = document.querySelectorAll('button');
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
                 const playerSelection = button.id;
                 const computerSelection = getComputerChoice ();
+                let result = playRound (playerSelection, computerSelection);
+                console.log (result);
+                gameScore (result);
+                console.log ("Computer Score:" + computerScore)
+                console.log ("Human Score:" + humanScore)
 
-                const container = document.querySelector('#container');
-                const content = document.createElement ('div');
-                content.classList.add('score');
-                content.textContent = 'The winner is: ' + playRound (playerSelection, computerSelection);
-                
-                container.appendChild(content);
+
+                // const container = document.querySelector('#container');
+                // const content = document.createElement ('div');
+                // content.classList.add('score');
+                // content.textContent = 'The winner is: ' + playRound (playerSelection, computerSelection);
+
+                // container.appendChild(content);
                 
             });
         });
@@ -65,7 +73,7 @@
         }
 
         
-        //loops a game of RPS, calls score function to display score after each round
+        // loops a game of RPS, calls score function to display score after each round
         // function game () {
         //     for (i=0; i<10; i++) {
         //         let playerSelection = prompt ("please make your selection:").toLowerCase ();
@@ -80,8 +88,6 @@
         //             break;
         //         }
         //     }
-
-      
         // }
         //determines score based on results of the game
         function gameScore (result) {
@@ -104,7 +110,7 @@
             }
         }
 
-        console.log (game())
+        // console.log (game())
 
     </script>
 </body>
