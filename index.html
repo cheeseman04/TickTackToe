@@ -18,6 +18,18 @@
     <div id="container"></div>
 
     <script>
+        const container = document.querySelector('#container');
+        const results = document.createElement ('div');
+        results.classList.add('results');
+
+        const computer = document.createElement ('div')
+        computer.classList.add('score')
+
+        const human = document.createElement ('div')
+        human.classList.add('score')
+
+
+
         let computerScore = 0;
         let humanScore = 0;
         let draws = 0;
@@ -44,13 +56,15 @@
                 console.log ("Computer Score:" + computerScore)
                 console.log ("Human Score:" + humanScore)
 
+                results.textContent = result
+                container.appendChild(results);
 
-                // const container = document.querySelector('#container');
-                // const content = document.createElement ('div');
-                // content.classList.add('score');
-                // content.textContent = 'The winner is: ' + playRound (playerSelection, computerSelection);
+                computer.textContent = "Computer Score:" + computerScore
+                human.textContent = "Human Score:" + humanScore
+                container.appendChild(computer);
+                container.appendChild(human);
 
-                // container.appendChild(content);
+                
                 
             });
         });
@@ -99,12 +113,12 @@
                 computerScore++
             }
 
-            if (humanScore === 3) {
+            if (humanScore === 5) {
                 console.log ("Game Over. Human Wins"); 
                 alert ("Game Over. Human Wins!")  
             } 
 
-            if (computerScore === 3) {
+            if (computerScore === 5) {
                 console.log ("Game Over. Computer Wins");
                 alert ("Game Over. Computer Wins.")
             }
