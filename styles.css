@@ -1,0 +1,25 @@
+
+
+body {
+    height: 100 vh;
+    font-family:Roboto, sans-serif;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background: #1646d8;
+    background: linear-gradient(
+        to right,
+        #5178ed,
+        #001a67,
+    );
+    color: whitesmoke;
+    margin: 0px;
+    padding: 8px;
+    font-family: fairwater-deco-serif, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+}
