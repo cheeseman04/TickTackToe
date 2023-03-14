@@ -23,3 +23,22 @@ body {
     font-weight: 400;
     font-size: 48px;
 }
+
+.sub-header {
+    align-items: center;
+}
+
+.container-one {
+    display: flex;
+    justify-content: center;
+    background: #e4e4e5;
+}
+
+.teaser {
+    max-width: 600px;
+    margin: 32px;
+    padding: 8px 24px;
+    font-family: "expo-serif-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+}
