@@ -49,6 +49,21 @@ body {
     justify-content: center;
 }
 
+button {
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    background: rgb(240, 118, 118);
+    font-family: fairwater-deco-serif, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+button:hover {
+    scale: 1.04;
+}
+
 .scoreboard {
     display: flex;
     justify-content: center;
@@ -64,4 +79,22 @@ body {
 .score-update {
     margin-bottom: 16px;
     font-weight: bold;
+}
+
+.top-score {
+    display: flex;
+    gap: 210px;
+    font-family: fairwater-deco-serif, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+}
+
+.bottom-score {
+    display: flex;
+    gap: 8px;
+    font-family: fairwater-deco-serif, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
 }
