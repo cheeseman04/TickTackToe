@@ -27,11 +27,12 @@ buttons.forEach((button) => {
         const computerSelection = getComputerChoice ();
         let result = playRound (playerSelection, computerSelection);
         gameScore (result);
-        console.log (playRound (playerSelection, computerSelection))
+        let msg = message (result);
+        console.log (playRound (playerSelection, computerSelection));
 
         scoreHuman.textContent = humanScore;
         scoreComputer.textContent = computerScore;
-        scoreUpdate.textContent = result;
+        scoreUpdate.textContent = msg;
 
 
 
@@ -56,6 +57,18 @@ function playRound (playerSelection, computerSelection) {
         return ("humanWins")
     } else {
         return ("computerWins")
+    }
+}
+
+function message (result) {
+    if (result === "humanWins") {
+        return ('You Won!')
+    } else if (result === "tie") {
+        return ("It's a Tie!")
+    } else if (result === "humanWins" && humanScore >= 3) {
+        return ("You're one win away from destroying the computers!! Let's GO!")
+    } else {
+        return ('Computer Won.')
     }
 }
 
